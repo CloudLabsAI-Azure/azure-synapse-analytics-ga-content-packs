@@ -11,7 +11,7 @@ Login-PowerBIServiceAccount -Credential $cred | Out-Null
 
 #Create PowerBI Workspace
 $powerBIws= "Synapse Analytics GA Labs" 
-New-PowerBIWorkspace -Name $powerBIws
+New-PowerBIWorkspace -Name "$powerBIws"
 $ws= Get-PowerBIWorkspace -Name $powerBIws -ErrorAction SilentlyContinue;
 
 #Check if powerbi workspace exists or not, if not it creates powerbi workspace
@@ -25,7 +25,7 @@ if ($ws)
 
 if (!$ws)
 {
-    $wsId = New-PowerBIWorkspace -Name $powerBIws
+    $wsId = New-PowerBIWorkspace -Name "$powerBIws"
     $ws= Get-PowerBIWorkspace -Name $powerBIws
 
     $wsid= $ws.Id
