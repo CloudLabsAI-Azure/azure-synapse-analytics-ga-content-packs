@@ -1,4 +1,4 @@
-Cd 'C:\LabFiles\asa\hands-on-labs\setup\automation'
+$InformationPreference = "Continue"
 Remove-Module solliance-synapse-automation
 
 . C:\LabFiles\AzureCreds.ps1
@@ -9,9 +9,12 @@ $securePassword = $password | ConvertTo-SecureString -AsPlainText -Force
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $userName, $SecurePassword
 Login-PowerBIServiceAccount -Credential $cred | Out-Null
 
+#Create PowerBI Workspace
 $powerBIws= "Synapse Analytics GA Labs" 
+New-PowerBIWorkspace -Name "Synapse Analytics GA Labs"
 $ws= Get-PowerBIWorkspace -Name $powerBIws -ErrorAction SilentlyContinue;
 
+#Check if powerbi workspace exists or not, if not it creates powerbi workspace
 if ($ws)
 {
     $wsid = $ws.Id
@@ -36,7 +39,9 @@ Add-PowerBIWorkspaceUser -Scope Organization -Id $wsid -UserEmailAddress $AzureU
 Logout-PowerBIServiceAccount
   
 sleep 3
-Import-Module "..\solliance-synapse-automation"
+       
+       Cd 'C:\LabFiles\asa\hands-on-labs\setup\automation'
+       Import-Module "..\solliance-synapse-automation"
          . C:\LabFiles\AzureCreds.ps1
 
         $userName = $AzureUserName                # READ FROM FILE
