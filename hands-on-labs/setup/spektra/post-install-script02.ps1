@@ -165,6 +165,9 @@ InstallAzureCli
 
 Uninstall-AzureRm -ea SilentlyContinue
 
+Install-Module -Name MicrosoftPowerBIMgmt.Workspaces -Force -AllowClobber
+Import-Module -Name MicrosoftPowerBIMgmt.Workspaces
+
 CreateLabFilesDirectory
 
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
