@@ -9,7 +9,7 @@ $userName = $AzureUserName
 $password = $AzurePassword
 $securePassword = $password | ConvertTo-SecureString -AsPlainText -Force
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $userName, $SecurePassword
-Login-PowerBIServiceAccount -Credential $cred | Out-Null
+Connect-PowerBIServiceAccount -Credential $cred | Out-Null
 
 #Create PowerBI Workspace
 $powerBIws= "Synapse Analytics GA Labs" 
@@ -38,7 +38,7 @@ if (!$ws)
 $userName = $AzureUserName 
 
 Add-PowerBIWorkspaceUser -Scope Organization -Id $wsid -UserEmailAddress $AzureUserName -AccessRight Admin
-Logout-PowerBIServiceAccount
+Disconnect-PowerBIServiceAccount
   
 sleep 3
        
