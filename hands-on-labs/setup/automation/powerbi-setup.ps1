@@ -1,4 +1,6 @@
 $InformationPreference = "Continue"
+Cd 'C:\LabFiles\asa\hands-on-labs\setup\automation'
+
 Remove-Module solliance-synapse-automation
 
 . C:\LabFiles\AzureCreds.ps1
