@@ -20,5 +20,8 @@ sleep 2
 sleep 2
 ./powerbi-setup.ps1
 
+sleep 2
+./environment-validate.ps1
+
 Unregister-ScheduledTask -TaskName "Setup" -Confirm:$false
 Stop-Transcript
