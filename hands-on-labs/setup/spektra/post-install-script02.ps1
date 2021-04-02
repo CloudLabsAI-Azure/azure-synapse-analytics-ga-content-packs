@@ -166,9 +166,13 @@ InstallAzureCli
 Uninstall-AzureRm -ea SilentlyContinue
 
 Install-Module -Name MicrosoftPowerBIMgmt -Force
+Install-Module -Name MicrosoftPowerBIMgmt.Admin -Force
+Install-Module -Name MicrosoftPowerBIMgmt.Profile -Force
+Install-Module -Name MicrosoftPowerBIMgmt.Workspaces -Force
+
 Import-Module -Name MicrosoftPowerBIMgmt
 #Install-Module -Name MicrosoftPowerBIMgmt.Workspaces -Force -AllowClobber
-#Import-Module -Name MicrosoftPowerBIMgmt.Workspaces
+Import-Module -Name MicrosoftPowerBIMgmt.Workspaces
 
 CreateLabFilesDirectory
 
