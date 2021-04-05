@@ -205,11 +205,11 @@
       }
     ],
     "outputs": {
-      "uniqueId": {
+      "unique suffix": {
         "type": "String",
         "value": "[ parameters('deploymentId')]"
       },
-      "Storage Account Name": {
+      "Datalake account name": {
         "type": "String",
         "value": "[variables('adlsStorageAccountName')]"
       },
