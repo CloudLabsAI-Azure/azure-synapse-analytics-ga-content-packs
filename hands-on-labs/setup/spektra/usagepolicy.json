@@ -26,11 +26,11 @@
     ]
   },
   {
-    "ResourceType": "Microsoft.Sql/servers/databases",
+    "ResourceType": "Microsoft.Synapse/workspaces/sqlPools",
     "Parameter": [
       {
         "Name": "max-DW",
-        "Value": "100"
+        "Value": "200"
       }
     ]
   }
